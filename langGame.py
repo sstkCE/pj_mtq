@@ -13,10 +13,10 @@ app.add_middleware(
     allow_methods=["GET", "POST"],  # อนุญาตเฉพาะ GET และ POST เท่านั้น
     allow_headers=["*"],  # อนุญาตทุก header
 )
-
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
-# ตั้งค่า LLM
 load_dotenv()
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
+
+
 
 # Prompt สำหรับปริศนา Escape Room
 
