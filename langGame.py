@@ -149,8 +149,22 @@ IC7432 1 ชิ้น
   "lightBulb4": "ตัวเลข",
   "answer": "ตัวเลข"
  }}
-    "medium": {{…}},
- "hard": {{…}}
+    "medium": {{"story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
+   "easy": {{
+  "speech" : "....",
+  "lightBulb1": "ตัวเลข",
+  "lightBulb2": "ตัวเลข",
+  "lightBulb3": "ตัวเลข",
+  "lightBulb4": "ตัวเลข",
+  "answer": "ตัวเลข"}},
+ "hard": {{"story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
+   "easy": {{
+  "speech" : "....",
+  "lightBulb1": "ตัวเลข",
+  "lightBulb2": "ตัวเลข",
+  "lightBulb3": "ตัวเลข",
+  "lightBulb4": "ตัวเลข",
+  "answer": "ตัวเลข"}}
 }},
 "puzzle2": {{
  "story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
@@ -165,12 +179,84 @@ IC7432 1 ชิ้น
    "blue3": "....",
     "blue4": "....",
   }},
-  "grey_battery": {{…}},
-  "red_battery": {{…}},
-  "yellow_battery": {{…}},
+  "grey_battery": {{   
+    "grey1": "....",
+    "grey2": "....",
+   "grey3": "....",
+    "grey4": "....",
+    }},
+  "red_battery": {{
+     "red1": "....",
+    "red2": "....",
+   "red3": "....",
+    "red4": "....",
+  }},
+  "yellow_battery": {{
+       "yellow1": "....",
+    "yellow2": "....",
+   "yellow3": "....",
+    "yellow4": "....",
+    }},
  }},
- “medium": {{…}},
- "hard": {{…}}
+ “medium": {{
+ "speech" : "....",
+  "total_value": "….",
+  "hint": "…",
+  "blue_battery": 
+  {{
+   "blue1": "....",
+    "blue2": "....",
+   "blue3": "....",
+    "blue4": "....",
+  }},
+  "grey_battery": {{   
+    "grey1": "....",
+    "grey2": "....",
+   "grey3": "....",
+    "grey4": "....",
+    }},
+  "red_battery": {{
+     "red1": "....",
+    "red2": "....",
+   "red3": "....",
+    "red4": "....",
+  }},
+  "yellow_battery": {{
+       "yellow1": "....",
+    "yellow2": "....",
+   "yellow3": "....",
+    "yellow4": "....",
+    }},
+ }},
+ "hard": {{
+ "speech" : "....",
+  "total_value": "….",
+  "hint": "…",
+  "blue_battery": 
+  {{
+   "blue1": "....",
+    "blue2": "....",
+   "blue3": "....",
+    "blue4": "....",
+  }},
+  "grey_battery": {{   
+    "grey1": "....",
+    "grey2": "....",
+   "grey3": "....",
+    "grey4": "....",
+    }},
+  "red_battery": {{
+     "red1": "....",
+    "red2": "....",
+   "red3": "....",
+    "red4": "....",
+  }},
+  "yellow_battery": {{
+       "yellow1": "....",
+    "yellow2": "....",
+   "yellow3": "....",
+    "yellow4": "....",
+    }},
 }},
 "puzzle3": {{
  "story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
@@ -188,8 +274,34 @@ IC7432 1 ชิ้น
   "wireBtn2ToIC": Boolean,
   "wireLedToIC": Boolean,
  }},
- "medium": {{…}},
- "hard": {{…}}
+ "medium": {{"story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
+ "easy": {{
+  "speech" : "....",
+  "hint": "…",
+  "typeIC": "...",
+  "ic": Boolean,
+  "led": Boolean,
+  "buttonInput1": Boolean,
+  "buttonInput2": Boolean,
+  "wireVccToIC": Boolean,
+  "wireGndToIC": Boolean,
+  "wireBtn1ToIC": Boolean,
+  "wireBtn2ToIC": Boolean,
+  "wireLedToIC": Boolean,}},
+ "hard": {{"story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
+ "easy": {{
+  "speech" : "....",
+  "hint": "…",
+  "typeIC": "...",
+  "ic": Boolean,
+  "led": Boolean,
+  "buttonInput1": Boolean,
+  "buttonInput2": Boolean,
+  "wireVccToIC": Boolean,
+  "wireGndToIC": Boolean,
+  "wireBtn1ToIC": Boolean,
+  "wireBtn2ToIC": Boolean,
+  "wireLedToIC": Boolean,}}
 }},
 "puzzle4": {{
  "story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
@@ -204,8 +316,28 @@ IC7432 1 ชิ้น
   "hint6": "…",
   "ans": "123456"
  }},
- "medium": {{…}},
- "hard": {{…}}
+ "medium": {{ "story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
+ "easy": {{
+  "speech1" : "บทพูดที่ชวนให้ออกเดินหาคำตอบ",
+  "speech2" : "....",
+  "hint1": "…",
+  "hint2": "…",
+  "hint3": "…",
+  "hint4": "…",
+  "hint5": "…",
+  "hint6": "…",
+  "ans": "123456"}},
+ "hard": {{ "story": "บทพูดที่นำพาให้มาทำ puzzle นี้",
+ "easy": {{
+  "speech1" : "บทพูดที่ชวนให้ออกเดินหาคำตอบ",
+  "speech2" : "....",
+  "hint1": "…",
+  "hint2": "…",
+  "hint3": "…",
+  "hint4": "…",
+  "hint5": "…",
+  "hint6": "…",
+  "ans": "123456"}}
 }}
 }}"""
 
