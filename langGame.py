@@ -19,6 +19,70 @@ llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
 
 
 # Prompt สำหรับปริศนา Escape Room
+TemplateRoom4="""สร้างคำใบ้สำหรับเกม Escape Room VR ที่ใช้ฉากบ้านธรรมดา โดยผู้เล่นต้องหาตัวเลข 4 หลักจากคำใบ้เพื่อล็อกออกจากบ้าน ผู้เล่นไม่สามารถหยิบจับสิ่งของได้ และใช้แค่การสังเกต, วิเคราะห์ และจดจำเบาะแส
+
+สิ่งที่ต้องมี:
+1. เนื้อเรื่องสั้น ๆ ที่บอกสถานการณ์และความลึกลับ
+2. คำพูดเตือนตัวเองของผู้เล่นจำนวน 10 ข้อ ที่ช่วยให้ผู้เล่นโฟกัสกับการสังเกตและวิเคราะห์
+3. คำใบ้ทั้งหมด 4 จุด (ในบ้านเดิมทุกครั้ง) คือ:
+   - ห้องนั่งเล่น → เบาะแสจากเตาผิงไฟ
+   - ห้องน้ำ → เบาะแสจากกระจกในไอน้ำ
+   - ห้องครัว → เบาะแสจากปฏิทิน
+   - ห้องนอน → เบาะแสจากรูปถ่าย/วัตถุที่มองเห็นได้
+ 4. คำใบ้ทั้งหมด 4 จุด (ในบ้านอีกหลัง) คือ:
+   - ห้องนั่งเล่น → เบาะแสจากของเล่นในห้องทั้ง 8 ชิ้น
+   - ห้องน้ำ → เบาะแสจากชักโครก
+   - ห้องครัว → เบาะแสจากตู้เย็น
+   - ห้องนอน → เบาะแสจากเปียโน/วัตถุที่มองเห็นได้
+คำใบ้แต่ละข้อควรมี:
+- location: ระบุห้อง
+- description: คำอธิบายสิ่งที่ผู้เล่นเห็น
+- hint: คำใบ้ที่ช่วยให้ตีความได้
+- solutionLogic: วิธีตีความเพื่อให้ได้ตัวเลขจากจุดนั้น
+
+**รูปแบบคำตอบต้องอยู่ใน JSON มีโครงสร้างดังนี้:**
+json
+{{
+  "story": "[เนื้อเรื่อง]",
+  "selfReminders": {{
+    "srd1":"คำเตือน 1",
+    ...
+    "srd10":"คำเตือน 10"
+ 
+  }},
+  "clues1": {{
+    {{
+      "location1_1": "[ห้อง]",
+      "description1_1": "[คำอธิบายสิ่งที่เห็น]",
+      "hint1_1": "[คำใบ้]",
+      "solutionLogic1_1": "[วิธีตีความหาเลข]"
+    }},
+    ...
+   {{
+      "location1_4": "[ห้อง]",
+      "description1_4": "[คำอธิบายสิ่งที่เห็น]",
+      "hint1_4": "[คำใบ้]",
+      "solutionLogic1_4": "[วิธีตีความหาเลข]"
+    }},
+  }},
+ "clues2": {{
+    {{
+      "location2_1": "[ห้อง]",
+      "description2_1": "[คำอธิบายสิ่งที่เห็น]",
+      "hint2_1": "[คำใบ้]",
+      "solutionLogic2_1": "[วิธีตีความหาเลข]"
+    }},
+    ...
+   {{
+      "location2_4": "[ห้อง]",
+      "description2_4": "[คำอธิบายสิ่งที่เห็น]",
+      "hint2_4": "[คำใบ้]",
+      "solutionLogic2_4": "[วิธีตีความหาเลข]"
+    }},
+  }},
+  "finalCode1": "[ตัวเลข 4 หลัก]",
+   "finalCode2": "[ตัวเลข 4 หลัก]"
+}}"""
 
 TemplateRoom3= """
 ช่วยสร้างเรื่องราวสำหรับเกมโดยสวมบทบาทโดยผู้เล่นมีบทบาทโดยเป็น{occupation}
@@ -411,6 +475,21 @@ IC7432 1 ชิ้น
   "ans": "123456"}}
 }}
 }}"""
+@app.post('/room4')
+async def gen_puzzleT(request : Request):
+    data = await request.json() # request จาก unity
+    pt = ChatPromptTemplate.from_template(TemplateRoom4)
+    chain = pt | llm
+    res = chain.invoke(data)
+
+    try:
+        cleaned_response = res.content.strip("```json")
+        super_clean = cleaned_response.strip("```")
+        print(super_clean)
+        response_data = json.loads(super_clean)  # แปลงข้อความเป็น JSON
+        return response_data
+    except json.JSONDecodeError: 
+        return {"error": "AI response is not valid JSON"}
 
 @app.post('/room3')
 async def gen_puzzleT(request : Request):
