@@ -63,15 +63,40 @@ TemplateRoom4 ="""สร้างคำใบ้สำหรับเกม Esca
     "hint1_1": "...คำใบ้...",
     "solutionLogic1_1": "จาก A + B + C = 12 หา A",
     ...
-    "location1_4": "...",
+    "location1_2": "ห้องน้ำ",
+    "description1_2": "...",
+    "hint1_2": "...",
+    "solutionLogic1_2": "..."
+
+    "location1_3": "ห้องครัว",
+    "description1_3": "...",
+    "hint1_3": "...",
+    "solutionLogic1_3": "..."
+
+
+    "location1_4": "ห้องนอน",
     "description1_4": "...",
     "hint1_4": "...",
     "solutionLogic1_4": "..."
   }},
   "clues2": {{
     "location2_1": "ห้องนั่งเล่น",
-    ...
-    "location2_4": "...",
+    "description2_1": "สมการ",
+    "hint2_1": "...คำใบ้...",
+    "solutionLogic2_1": "..."
+
+    "location2_2": "ห้องน้ำ",
+    "description2_2": "...",
+    "hint2_2": "...",
+    "solutionLogic2_2": "..."
+
+    "location2_3": "ห้องครัว",
+    "description2_3": "...",
+    "hint2_3": "...",
+    "solutionLogic2_3": "..."
+
+
+    "location2_4": "ห้องนอน",
     "description2_4": "...",
     "hint2_4": "...",
     "solutionLogic2_4": "..."
