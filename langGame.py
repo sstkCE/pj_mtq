@@ -42,7 +42,12 @@ TemplateRoom4 ="""สร้างคำใบ้สำหรับเกม Esca
  ภายใน clues2 ต้องเป็นเลข 1-4 เท่านั้นห้ามมีตัวอักษร
 สุดท้าย ให้คำนวณและระบุตัวเลข 4 หลักจริง ๆ ใน
 - "finalCode1": ABCD
-- "finalCode2": xxxx
+- "finalCode2": hint2_1 location2_2  description2_3 solutionLogic2_4
+
+**สำคัญ:**
+- สำหรับ "finalCode1" ให้ใช้เฉพาะค่าตัวแปรที่ถูก "หา" จาก solutionLogic1_1 ถึง solutionLogic1_4 ตามลำดับ เช่น  
+  ถ้า solutionLogic1_1 = "หา A", solutionLogic1_2 = "หา C", solutionLogic1_3 = "หา E", solutionLogic1_4 = "หา G"  
+  ให้ finalCode1 = A C E G (ตามลำดับ) เท่านั้น
 
 โดยแต่ละตัวคือค่าของตัวแปรที่ได้จากการแก้สมการใน clues นั้น ๆ
 โดยสมการและคำตอบจะเปลี่ยนแปลงทุกครั้งที่สร้างคำใบ้ใหม่และต้องง่ายมากๆ
